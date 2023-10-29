@@ -1,8 +1,6 @@
 import React, {useMemo} from 'react';
 import {allFilters, filters} from "../ReservationList/filters";
 
-
-
 interface Option {
     label: string;
     value: string;
@@ -40,7 +38,9 @@ const Dropdown: React.FC<{
                 className="block w-full mt-1 py-2 px-3 border
                  border-gray-300 bg-white rounded-md shadow-sm
                  focus:outline-none focus:ring-indigo-500
-                 focus:border-indigo-500">
+                 focus:border-indigo-500"
+                role='combobox'
+        >
             {options}
         </select>
         </label>

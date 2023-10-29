@@ -3,7 +3,7 @@ import Table from "../table/Table";
 import { data } from "../../data";
 import {reducer} from "./reducer";
 import {allFilters, filters} from "./filters";
-import Dropdown from "../DropDown/FilterDropDown";
+import Dropdown from "../DropDown/DropDown";
 
 interface SelectedFilters {
     [key: string]: string;
