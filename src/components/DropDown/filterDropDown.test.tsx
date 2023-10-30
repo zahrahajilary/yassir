@@ -1,4 +1,3 @@
-import React from 'react';
 import {render, screen} from "@testing-library/react";
 import user from '@testing-library/user-event';
 import DropDown from "./DropDown";
@@ -9,6 +8,8 @@ const onChange=jest.fn()
 const label = 'status';
 const options =[
     {value: '', label: 'not selected'},
+    {value: 'CHECKED OUT', label: 'check out'},
+    {value: 'NOT CONFIRMED', label: 'not confirmed'},
     {value: 'SEATED', label: 'seated'},
     {value: 'CONFIRMED', label: 'confirmed'}]
 
@@ -17,6 +18,7 @@ function renderDropDown(){
                      selected={selected}
                      onChange={onChange}
                      label={label}
+                     options={options}
     />)
 }
 describe('Drop Down test component',()=>{
@@ -27,7 +29,7 @@ describe('Drop Down test component',()=>{
     })
     test('user clicked on DropDown',
         async ()=>{
-           renderDropDown()
+        renderDropDown()
         const select = await ( screen.findByRole('combobox',{hidden:true}));
         user.selectOptions(select, 'confirmed');
         expect(onChange).toHaveBeenCalledWith('status', 'CONFIRMED');

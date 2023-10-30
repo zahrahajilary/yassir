@@ -1,12 +1,18 @@
-import React, {useState, useReducer, startTransition, useCallback, useEffect} from "react";
+import  React,{useState, useReducer, startTransition, useCallback} from "react";
 import Table from "../table/Table";
 import { data } from "../../data";
 import {reducer} from "./reducer";
-import {allFilters, filters} from "./filters";
+import {allFilters, AllFiltersType, filters} from "./filters";
 import Dropdown from "../DropDown/DropDown";
+import {SortKey} from "./ReservationListInterface";
 
 interface SelectedFilters {
     [key: string]: string;
+}
+
+interface Option {
+    label: string;
+    value: string;
 }
 
 function ReservationList(){
@@ -14,17 +20,10 @@ function ReservationList(){
     const [state, dispatch] = useReducer(reducer, data.reservations);
     const [isAscending, setIsAscending] = useState<boolean>(true);
     const [searchInput, setSearchInput] = useState("");
-     const [selected, setSelected] = useState<SelectedFilters>({});
-    // const {status, setStatus,
-    //     date, setDate,
-    //     shift,setShift,
-    //     area,setArea} = useFilters();
+    const [selected, setSelected] = useState<SelectedFilters>({});
+    const [keySort, setKeySort]=useState<SortKey| null>(null);
 
-    //
 
-    useEffect(() => {
-        console.log(selected,'selected')
-    }, [selected]);
     const handleChange = useCallback((filter: filters, value: string) => {
         const newVal = {
             ...selected,
@@ -35,12 +34,15 @@ function ReservationList(){
             type: 'UPDATE_FILTERS',
             payload: {
                filters: newVal,
-                searchInput:searchInput
+               searchInput:searchInput,
+                key:keySort,
+                isAscending,
+
             }
         })
-    }, [selected]);
+    }, [selected,searchInput]);
 
-    const handleSort = (key: string) => {
+    const handleSort = (key: SortKey) => {
         dispatch({
             type: 'SORT',
             payload: {
@@ -49,13 +51,16 @@ function ReservationList(){
             },
         });
         setIsAscending(!isAscending);
+        setKeySort(key);
     };
 
     const handleSearch = (input: string) => {
         dispatch({type: 'SEARCH',
             payload: {
                 searchInput:input,
-                filters:selected
+                filters:selected,
+                key:keySort,
+                isAscending,
             }})
     };
 
@@ -66,8 +71,6 @@ function ReservationList(){
             handleSearch(input);
         });
     }
-
-
     return(
         <>
             <div className='flex flex-row space-x-12'>
@@ -77,17 +80,18 @@ function ReservationList(){
                         filter={filter as filters}
                         selected={selected}
                         label={filter}
-                     onChange={handleChange}/>
+                        options={allFilters[filter as keyof typeof allFilters]}
+                        onChange={handleChange}/>
               )}
 
                 <label aria-label="search input" htmlFor="search" className="text-gray-700 font-medium">
                     Search
                     <input
+                        name='search'
                         id="search"
                         value={searchInput}
                         className="ml-2 border border-gray-400 p-2 rounded"
                         onChange={handleSearchChange}
-
                     />
                 </label>
             </div>

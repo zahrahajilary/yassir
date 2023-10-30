@@ -1,17 +1,19 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Props} from './TableInterface';
 import {headers} from "./tableInfo";
 import {dateString} from "../../utils";
+import {SortKey} from "../ReservationList/ReservationListInterface";
 
 function Table({body,handleSort}:Props) {
 
   return (
    <div className="flex justify-center m-24">
-    <table className="table-auto border-collapse bg-white text-left text-sm text-gray-500 border-spacing-4 min-w-full">
+    <table className="table-auto border-collapse bg-white text-left text-sm text-gray-500 border-spacing-4 min-w-full"
+           data-testid={'table-test'}>
       <thead>
         <tr className="space-x-4">
           {headers.map((item) => (
-              <th key={item.key} onClick={() => handleSort(item.key)}>
+              <th key={item.key} onClick={() => handleSort(item.key as SortKey)}>
                 {item.value}
               </th>))
           }

@@ -1,7 +1,9 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true,   // add node env
+    commonjs: true // add commonjs env
   },
   extends: [
     'eslint:recommended',
@@ -28,5 +30,8 @@ module.exports = {
     react: {
       version: 'detect'
     }
+  },
+  globals: {
+    React: 'readonly'
   }
 }

@@ -6,11 +6,6 @@ interface Option {
     value: string;
 }
 
-interface Props {
-    options: Option[];
-    value: string;
-    onChange: (value: string) => void;
-}
 
 interface SelectedFilters {
     [key: string]: string;
@@ -20,17 +15,18 @@ const Dropdown: React.FC<{
     filter: filters;
     selected: SelectedFilters;
     onChange: (filter: filters, value: string) => void;
-    label:string
-}> = ({filter, selected, onChange,label}) => {
+    label:string;
+    options: Option[];
+}> = ({filter, selected, onChange,label,options}) => {
 
-    const options = useMemo(() => {
-        return allFilters[filter].map(option =>
+    const optionRender = () => {
+        return options.map(option =>
             <option value={option.value} key={option.value}>{option.label}</option>
         );
-    }, [filter]);
+    };
 
     return (
-        <label htmlFor={label} aria-label={`filter-${label}`}>
+        <label htmlFor={label} aria-label={`filter-${label}`} data-testid='label-test'>
             {label}
         <select value={selected[filter]}
                 id={label}
@@ -41,7 +37,7 @@ const Dropdown: React.FC<{
                  focus:border-indigo-500"
                 role='combobox'
         >
-            {options}
+            {optionRender()}
         </select>
         </label>
     );

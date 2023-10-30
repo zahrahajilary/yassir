@@ -54,3 +54,8 @@ export const filterData = (filter: Filter, data: Reservation[]) => {
         });
 };
 
+export const searchHandler =(data:Reservation[],searchTerm:string)=> {
+   return data.filter((item) =>
+        item.customer.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.customer.lastName.toLowerCase().includes(searchTerm.toLowerCase()))
+}
