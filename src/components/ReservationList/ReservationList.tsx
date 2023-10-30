@@ -98,6 +98,7 @@ function ReservationList(){
 
             <div className="mt-1 relative rounded-md shadow-sm">
               <input
+                aria-label='search'
                 role="textbox"
                 id="search"
                 value={searchInput}
