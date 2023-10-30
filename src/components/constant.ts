@@ -1,4 +1,4 @@
-import {AllFiltersType} from "./ReservationList/filters";
+import {AllFiltersType} from "./ReservationList/types";
 
 export const headers = [
   {key:'firstName',value:'first name'},

@@ -1,4 +1,4 @@
-import {Customer, Reservation, SortConfig} from "../components/ReservationList/ReservationListInterface";
+import {Customer, Reservation, SortConfig} from "../components/commonTypes";
 
 export const dateString = (datetime: string)=>{
   const date = new Date(datetime);

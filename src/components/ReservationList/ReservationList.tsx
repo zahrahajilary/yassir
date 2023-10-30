@@ -5,7 +5,7 @@ import {reducer} from "./reducer";
 import {allFilters} from "../constant";
 import {filters} from "./types";
 import Dropdown from "../DropDown/DropDown";
-import {SortKey} from "./types";
+import {SortKey} from "../commonTypes";
 
 
 interface SelectedFilters {

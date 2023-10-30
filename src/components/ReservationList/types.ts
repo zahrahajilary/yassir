@@ -1,3 +1,4 @@
+import {Reservation} from "../commonTypes";
 export type FilterOption = {
     value: string;
     label: string;
@@ -13,24 +14,7 @@ export type AllFiltersType = {
 };
 
 export type filters = 'status' | 'shift' |'area'|'date';
-export interface Customer {
-    firstName: string;
-    lastName: string;
-}
 
-export interface Reservation {
-    id: number;
-    start: string;
-    end:string;
-    customer: Customer;
-    businessDate:string;
-    status:string;
-    shift:string;
-    quantity:number;
-    area:string;
-    guestNotes:string
-
-}
 
 export interface Action {
     type: string;
@@ -46,7 +30,3 @@ export interface Action {
 }
 export type SortKey =  keyof Reservation | 'firstName' | 'lastName';
 
-export interface SortConfig {
-    key:SortKey;
-    isAscending: boolean;
-}

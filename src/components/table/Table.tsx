@@ -2,7 +2,7 @@ import React from 'react';
 import {Props} from './types';
 import {headers} from "../constant";
 import {utils} from "../../utils";
-import {SortKey} from "../ReservationList/ReservationListInterface";
+import {SortKey} from "../commonTypes";
 
 function Table({body,handleSort}:Props) {
 

@@ -105,18 +105,18 @@ describe('checking reservationList functionality',()=>{
   test('integration search and sort',async()=>{
     const {container} = renderReservationList();
     const searchInput = await screen.findByRole('textbox') as HTMLInputElement;
-      fireEvent.change(searchInput,{target:{value:'ra'}});
-      const nameLabel = await screen.findByText('first name');
-      let res =  container.querySelectorAll('tbody tr');
-      expect(res).toHaveLength(3);
-      expect(res[1].textContent).toContain('Chris');
-      fireEvent.click(nameLabel);
-      res =  container.querySelectorAll('tbody tr');
+    fireEvent.change(searchInput,{target:{value:'ra'}});
+    const nameLabel = await screen.findByText('first name');
+    let res =  container.querySelectorAll('tbody tr');
+    expect(res).toHaveLength(3);
+    expect(res[1].textContent).toContain('Chris');
+    fireEvent.click(nameLabel);
+    res =  container.querySelectorAll('tbody tr');
 
-      expect(res[2].textContent).toContain('Chris')
-      res = container.querySelectorAll('tbody tr');
-      fireEvent.click(nameLabel);
-      expect(res[0].textContent).toContain('Adelbert')
+    expect(res[2].textContent).toContain('Chris')
+    res = container.querySelectorAll('tbody tr');
+    fireEvent.click(nameLabel);
+    expect(res[0].textContent).toContain('Adelbert')
   })
   test('integration filter and sort ',async ()=> {
     await waitFor(async ()=>{

@@ -1,4 +1,5 @@
-import { Reservation, Action } from "./types";
+import {  Action } from "./types";
+import {Reservation} from "../commonTypes";
 import {data} from "../../data";
 import {utils} from "../../utils";
 export const reducer = (state: Reservation[], action: Action) => {
