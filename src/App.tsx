@@ -5,11 +5,10 @@ const ReservationList = lazy(()=>import('./components/ReservationList/Reservatio
 
 function App() {
   return (
-    <div>
-        <Suspense fallback={<Loading/>}>
-            <ReservationList/>
-        </Suspense>
-
+    <div className='container mx-auto px-4 my-8'>
+      <Suspense fallback={<Loading/>}>
+        <ReservationList/>
+      </Suspense>
     </div>
   );
 }
