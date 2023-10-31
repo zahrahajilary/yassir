@@ -8,7 +8,7 @@ import Dropdown from '../DropDown/DropDown'
 import { SortKey, SelectedFilters } from '../commonTypes'
 
 
-function ReservationList() {
+const ReservationList:React.FC = () =>{
 
   const [state, dispatch] = useReducer(reducer, data.reservations)
   const [isAscending, setIsAscending] = useState<boolean>(true)

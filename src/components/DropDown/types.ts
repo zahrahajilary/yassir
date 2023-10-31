@@ -9,7 +9,7 @@ export interface SelectedFilters {
     [key: string]: string;
 }
 
-export type Props = {
+export interface Props  {
     filter: filters;
     selected: SelectedFilters;
     onChange: (filter: filters, value: string) => void;
