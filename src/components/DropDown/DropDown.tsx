@@ -1,4 +1,4 @@
-import { Props } from './types'
+import {Props} from "./types"
 
 const Dropdown: React.FC<Props> = ({ filter, selected, onChange, label, options }) => {
 
