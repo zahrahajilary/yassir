@@ -14,12 +14,11 @@ The ReservationList component displays a table of reservation data. It allows us
 Here are some ways the project could be improved:
 
 - Add pagination to handle large data sets better
-- Using debouncing for having better performance
+- Using debouncing for having better performance or adding useTransition and isPendeing for each state of changeing action
 - Extract search components
 - Write unit tests for utils
-
-
-- Use React Context for global data like filters
+- Use React Context for global data like filters, and use useReducer globally but for better performance and can seprate
+state and action
 - Memoize callbacks to prevent unnecessary re-renders
 
 ### Getting Started
