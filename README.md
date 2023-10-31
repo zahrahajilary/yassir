@@ -8,6 +8,7 @@ The ReservationList component displays a table of reservation data. It allows us
 - Search for reservations by customer first name and last name
 - Sort reservations by columns in ascending/descending order
 - The component is built using React and TypeScript.
+- Taking care about web accessibility
 
 ### Improvements
 Here are some ways the project could be improved:
