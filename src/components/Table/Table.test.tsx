@@ -38,13 +38,13 @@ function renderTable() {
   return render(<Table body={body} handleSort={sort}/>)
 
 }
-describe('table test', ()=>{
-  test('render table', ()=>{
+describe('Table test', ()=>{
+  test('render Table', ()=>{
     renderTable()
     const tableRows = screen.getAllByRole('row')
     expect(tableRows.length).toBe(3)
   })
-  test('check element is exist in table', ()=>{
+  test('check element is exist in Table', ()=>{
     renderTable()
     const statusCheck = screen.getAllByText('not confirmed')
     expect(statusCheck.length).toBe(2)

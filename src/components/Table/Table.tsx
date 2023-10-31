@@ -9,7 +9,7 @@ function Table({ body, handleSort }:Props) {
   return (
     <div className="flex justify-center space-y-8">
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border bg-white rounded text-left text-sm text-gray-500" data-testid={'table-test'}>
+        <table className="table-auto w-full border bg-white rounded text-left text-sm text-gray-500" data-testid={'Table-test'}>
           <thead>
             <tr className="bg-gray-50">
               {headers.map((item) => (

@@ -1,5 +1,5 @@
 import React, { useState, useReducer, startTransition, useCallback } from 'react'
-import Table from '../table/Table'
+import Table from '../Table/Table'
 import { data } from '../../data'
 import { reducer } from './reducer'
 import { allFilters } from '../constant'

@@ -15,9 +15,9 @@ describe('checking reservationList functionality', () => {
     expect(filter.length).toBe(4)
   })
 
-  test('check the table rendered', async () => {
+  test('check the Table rendered', async () => {
     const { container } = renderReservationList()
-    const table = await within(container).findByTestId('table-test')
+    const table = await within(container).findByTestId('Table-test')
     expect(table).toBeInTheDocument()
   })
 
