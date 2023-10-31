@@ -1,4 +1,4 @@
-import {Reservation} from "../commonTypes";
+import { Reservation } from '../commonTypes'
 export type FilterOption = {
     value: string;
     label: string;
@@ -28,5 +28,7 @@ export interface Action {
         };
     };
 }
-export type SortKey =  keyof Reservation | 'firstName' | 'lastName';
-
+export type SortKey = keyof Reservation | 'firstName' | 'lastName';
+export interface SelectedFilters {
+    [key: string]: string;
+}

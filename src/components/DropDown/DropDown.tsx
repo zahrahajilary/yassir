@@ -1,5 +1,5 @@
-import {filters} from '../ReservationList/types';
-import {Option,SelectedFilters} from "./types";
+import { filters } from '../ReservationList/types'
+import { Option, SelectedFilters } from './types'
 
 const Dropdown: React.FC<{
     filter: filters;
@@ -7,13 +7,13 @@ const Dropdown: React.FC<{
     onChange: (filter: filters, value: string) => void;
     label:string;
     options: Option[];
-}> = ({filter, selected, onChange,label,options}) => {
+}> = ({ filter, selected, onChange, label, options }) => {
 
   const optionRender = () => {
     return options.map(option =>
       <option value={option.value} key={option.value}>{option.label}</option>
-    );
-  };
+    )
+  }
 
   return (
     <label htmlFor={label}
@@ -25,7 +25,7 @@ const Dropdown: React.FC<{
         id={label}
         aria-labelledby={`label-${label}`}
         aria-label={`filter-${label}`}
-        onChange={(e)=>onChange(filter,e.target.value)}
+        onChange={(e)=>onChange(filter, e.target.value)}
         className="
         block w-full mt-1 py-2 px-3 border
                  border-gray-300 bg-white rounded-md shadow-sm
@@ -33,9 +33,9 @@ const Dropdown: React.FC<{
                  focus:border-indigo-500"
         // role='combobox'
       >
-        {optionRender()}
+        { optionRender() }
       </select>
     </label>
-  );
+  )
 }
 export default Dropdown

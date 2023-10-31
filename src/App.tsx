@@ -1,5 +1,5 @@
-import React, {lazy, Suspense} from 'react';
-import Loading from "./components/Loading/Loading";
+import React, { lazy, Suspense } from 'react'
+import Loading from './components/Loading/Loading'
 const ReservationList = lazy(()=>import('./components/ReservationList/ReservationList'))
 
 
@@ -10,7 +10,7 @@ function App() {
         <ReservationList/>
       </Suspense>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

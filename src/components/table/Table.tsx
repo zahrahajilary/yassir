@@ -1,15 +1,15 @@
-import React from 'react';
-import {Props} from './types';
-import {headers} from "../constant";
-import {utils} from "../../utils";
-import {SortKey} from "../commonTypes";
+import React from 'react'
+import { Props } from './types'
+import { headers } from '../constant'
+import { dateString } from '../../utils'
+import { SortKey } from '../commonTypes'
 
-function Table({body,handleSort}:Props) {
+function Table({ body, handleSort }:Props) {
 
   return (
     <div className="flex justify-center space-y-8">
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border-collapse bg-white rounded text-left text-sm text-gray-500" data-testid={'table-test'}>
+        <table className="table-auto w-full border bg-white rounded text-left text-sm text-gray-500" data-testid={'table-test'}>
           <thead>
             <tr className="bg-gray-50">
               {headers.map((item) => (
@@ -37,14 +37,14 @@ function Table({body,handleSort}:Props) {
                   <td className="px-6 py-4">
                     {item.shift.toLowerCase()}
                   </td>
-                  <td className="px-6 py-4">{utils.dateString(item.start)}</td>
-                  <td className="px-6 py-4">{utils.dateString(item.end)}</td>
+                  <td className="px-6 py-4">{dateString(item.start)}</td>
+                  <td className="px-6 py-4">{dateString(item.end)}</td>
                   <td className="px-6 py-4">{item.quantity}</td>
                   <td className="px-6 py-4">
-                    {item.guestNotes.length > 1 ? item.guestNotes : "---"}
+                    {item.guestNotes.length > 1 ? item.guestNotes : '---'}
                   </td>
                 </tr>
-              );
+              )
             })}
           </tbody>
         </table>
@@ -53,4 +53,4 @@ function Table({body,handleSort}:Props) {
     </div>
   )
 }
-export default Table;
+export default Table

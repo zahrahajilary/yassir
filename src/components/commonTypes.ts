@@ -4,7 +4,7 @@ export interface Customer {
 }
 
 
-export type SortKey =  keyof Reservation | 'firstName' | 'lastName';
+export type SortKey = keyof Reservation | 'firstName' | 'lastName';
 
 export interface SortConfig {
     key:SortKey;
@@ -22,4 +22,9 @@ export interface Reservation {
     area:string;
     guestNotes:string
 
+}
+
+export type Filter = {[key: string]: string; }
+export interface SelectedFilters {
+    [key: string]: string;
 }

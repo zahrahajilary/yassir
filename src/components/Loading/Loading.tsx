@@ -1,5 +1,5 @@
 
-import React from "react";
+import React from 'react'
 
 const LoadingComponent: React.FC = () => {
   return (
@@ -12,10 +12,10 @@ const LoadingComponent: React.FC = () => {
         <span>Loading...</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoadingComponent;
+export default LoadingComponent
 
 
 

@@ -8,7 +8,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -28,6 +28,11 @@ module.exports = {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "indent": ["error", 2],
+    "semi": ["error", "never"],
+    "space-infix-ops": "error",
+    "space-before-blocks": "error",
+    "keyword-spacing": ["error", { "before": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }]
   },
   settings: {
     react: {
