@@ -1,12 +1,13 @@
-import { Customer, Reservation, SortConfig } from '../components/commonTypes'
+import {Customer, Reservation, SortConfig} from '../components/commonTypes'
 import {Filter} from '../components/commonTypes'
+import {FilterOption} from "../components/ReservationList/types"
 
-export const dateString = (datetime: string)=>{
+export const dateString = (datetime: string) => {
   const date = new Date(datetime)
   return date.toLocaleDateString()
 }
 
-export const sortData = (data: Reservation[], sortConfig: SortConfig)=> {
+export const sortData = (data: Reservation[], sortConfig: SortConfig) => {
   const { key, isAscending } = sortConfig
   if (key === 'firstName' || key === 'lastName') {
     return data.sort((a, b) => {
@@ -44,8 +45,14 @@ export const filterData = (filter: Filter, data: Reservation[]) => {
   })
 }
 
-export const searchHandler = (data:Reservation[], searchTerm:string)=> {
+export const searchHandler = (data:Reservation[], searchTerm:string) => {
   return data.filter((item) =>
     item.customer.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.customer.lastName.toLowerCase().includes(searchTerm.toLowerCase()))
+}
+
+export const gettingDate:(data:Reservation[]) => FilterOption[] = (data:Reservation[])=> {
+  const uniqueDatesSet = new Set(data.map((reservation) => reservation.businessDate))
+  return Array.from(uniqueDatesSet).map((date) => ({ value: date, label: date }))
+
 }

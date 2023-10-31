@@ -28,7 +28,3 @@ export interface Action {
 }
 
 export type SortKey = keyof Reservation | 'firstName' | 'lastName';
-
-export interface SelectedFilters {
-    [key: string]: string;
-}

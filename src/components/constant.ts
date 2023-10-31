@@ -1,4 +1,6 @@
 import { AllFiltersType } from './ReservationList/types'
+import { gettingDate } from "../utils"
+import { data } from "../data"
 
 export const headers = [
   { key:'firstName', value:'first name' },
@@ -30,22 +32,7 @@ export const allFilters:AllFiltersType = {
     { value: '', label: 'not selected' },
     { value:'BAR', label:'bar' },
     { value:'MAIN ROOM', label:'main room' },
-
-
   ],
-  date:[
-    { value: '', label: 'not selected' },
-    { value:'02.08.2018', label:'02.08.2018' },
-    { value:'03.08.2018', label:'03.08.2018' },
-    { value:'04.08.2018', label:'04.08.2018' },
-    { value:'05.08.2018', label:'05.08.2018' },
-    { value:'06.08.2018', label:'06.08.2018' },
-    { value:'07.08.2018', label:'07.08.2018' },
-    { value:'10.08.2018', label:'10.08.2018' },
-    { value:'11.08.2018', label:'11.08.2018' },
-    { value:'12.08.2018', label:'12.08.2018' },
-    { value:'13.08.2018', label:'13.08.2018' },
-    { value:'14.08.2018', label:'14.08.2018' },
-
-  ]
+  date:[ { value: '', label: 'not selected' },
+    ...gettingDate(data.reservations)]
 }

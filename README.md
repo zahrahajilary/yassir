@@ -17,7 +17,8 @@ Here are some ways the project could be improved:
 - Extract search components
 - Write unit tests for utils
 
--  Use React Context for global data like filters
+
+- Use React Context for global data like filters
 - Memoize callbacks to prevent unnecessary re-renders
 
 ### Getting Started
