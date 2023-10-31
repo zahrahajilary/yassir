@@ -16,7 +16,7 @@ function Table({ body, handleSort }:Props) {
                 <th
                   key={item.key}
                   onClick={() => handleSort(item.key as SortKey)}
-                  className="px-6 py-3"
+                  className="px-6 py-3 cursor-pointer"
                 >
                   {item.value}
                 </th>

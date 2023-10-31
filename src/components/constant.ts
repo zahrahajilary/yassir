@@ -19,7 +19,6 @@ export const allFilters:AllFiltersType = {
     { value: 'NOT CONFIRMED', label: 'not confirmed' },
     { value: 'SEATED', label: 'seated' },
     { value: 'CONFIRMED', label: 'confirmed' },
-
   ],
   shift:[
     { value: '', label: 'not selected' },
