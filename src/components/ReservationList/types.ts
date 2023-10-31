@@ -1,4 +1,5 @@
 import { Reservation } from '../commonTypes'
+
 export type FilterOption = {
     value: string;
     label: string;
@@ -13,9 +14,6 @@ export type AllFiltersType = {
     date:FilterOptions;
 };
 
-export type filters = 'status' | 'shift' |'area'|'date';
-
-
 export interface Action {
     type: string;
     payload: {
@@ -28,7 +26,9 @@ export interface Action {
         };
     };
 }
+
 export type SortKey = keyof Reservation | 'firstName' | 'lastName';
+
 export interface SelectedFilters {
     [key: string]: string;
 }

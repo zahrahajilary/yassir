@@ -10,6 +10,7 @@ export interface SortConfig {
     key:SortKey;
     isAscending: boolean;
 }
+
 export interface Reservation {
     id: number;
     start: string;
@@ -21,10 +22,12 @@ export interface Reservation {
     quantity:number;
     area:string;
     guestNotes:string
-
 }
 
 export type Filter = {[key: string]: string; }
+
 export interface SelectedFilters {
     [key: string]: string;
 }
+
+export type filters = 'status' | 'shift' |'area'|'date';

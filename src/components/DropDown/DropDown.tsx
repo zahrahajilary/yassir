@@ -1,13 +1,6 @@
-import { filters } from '../ReservationList/types'
-import { Option, SelectedFilters } from './types'
+import { Props } from './types'
 
-const Dropdown: React.FC<{
-    filter: filters;
-    selected: SelectedFilters;
-    onChange: (filter: filters, value: string) => void;
-    label:string;
-    options: Option[];
-}> = ({ filter, selected, onChange, label, options }) => {
+const Dropdown: React.FC<Props> = ({ filter, selected, onChange, label, options }) => {
 
   const optionRender = () => {
     return options.map(option =>
@@ -38,4 +31,5 @@ const Dropdown: React.FC<{
     </label>
   )
 }
+
 export default Dropdown

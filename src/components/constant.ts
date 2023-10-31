@@ -26,8 +26,6 @@ export const allFilters:AllFiltersType = {
     { value:'LUNCH', label:'lunch' },
     { value:'BREAKFAST', label:'breakfast' },
     { value:'DINNER', label:'dinner' },
-
-
   ],
   area:[
     { value: '', label: 'not selected' },

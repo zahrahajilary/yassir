@@ -1,5 +1,5 @@
 
-import React, { render, screen, within, fireEvent } from '@testing-library/react'
+import { render, screen, within, fireEvent } from '@testing-library/react'
 import ReservationList from './ReservationList'
 import user from '@testing-library/user-event'
 import { waitFor } from '@testing-library/react'
@@ -42,8 +42,8 @@ describe('checking reservationList functionality', () => {
 
 
   test('combination search and filter', async () => {
-
     const { container } = renderReservationList()
+
     await waitFor(async () => {
       const searchInput = await screen.findByRole('textbox') as HTMLInputElement
       fireEvent.change(searchInput, { target:{ value:'shina' } })
@@ -62,8 +62,8 @@ describe('checking reservationList functionality', () => {
   })
 
   test('integration test for having two filters', async () => {
-
     const { container } = renderReservationList()
+
     await waitFor(async () => {
       const areaFilter = await screen.findByLabelText('area')
       let selectedValArea = await within(areaFilter).findByText('bar')
@@ -84,7 +84,6 @@ describe('checking reservationList functionality', () => {
       res = container.querySelectorAll('tbody tr')
       expect(res).toHaveLength(20)
     })
-
   })
 
   test('integration sort and filter', async () => {
@@ -102,8 +101,7 @@ describe('checking reservationList functionality', () => {
       user.click(nameLabel)
       expect(res[0].textContent).toContain('Dewain')
     })
-  }
-  )
+  })
 
   test('integration search and sort', async () => {
     const { container } = renderReservationList()

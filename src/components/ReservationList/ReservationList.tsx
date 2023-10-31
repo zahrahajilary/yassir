@@ -3,7 +3,7 @@ import Table from '../table/Table'
 import { data } from '../../data'
 import { reducer } from './reducer'
 import { allFilters } from '../constant'
-import { filters } from './types'
+import { filters } from '../commonTypes'
 import Dropdown from '../DropDown/DropDown'
 import { SortKey, SelectedFilters } from '../commonTypes'
 
